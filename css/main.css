@@ -3852,5 +3852,12 @@ body.absolute_header .breadcrumb_area {
     z-index: 1;
 	margin-top: 20px;
 }
-
+a.link {
+    font-weight: 800 !important;
+    text-decoration: none;
+    font-size: 16px !important;
+}
+.icon-company{
+	margin-bottom: 5px;
+}
 /* END: Modal CSS */
