@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Send Email</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
+<body>
+    <h2>Send an Email</h2>
+    <form id="emailForm">
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" value="test" required><br><br>
+        
+        <label for="body">Message:</label><br>
+        <textarea id="body" rows="5" cols="40" value="test" required></textarea><br><br>
+        
+        <input type="button" value="Send Mail" onclick="sendEmail()">
+    </form>
+
+    <script>
+        function sendEmail() {
+            const subject = document.getElementById("subject").value;
+            const body = document.getElementById("body").value;
+
+            Email.send({
+                Host: "mail.oplexdigital.com",
+                Port: 587,
+                Username: "contact@oplexdigital.com",
+                Password: "Ag%G6>/dPETf?-mc",
+                To: "contact@oplexdigital.com",
+                From: "hamzaoplex@gmail.com",
+                Subject: subject,
+                Body: body
+            }).then(
+                message => alert("Mail sent successfully")
+            ).catch(
+                error => alert("Failed to send email: " + error)
+            );
+        }
+    </script>
+</body>
+</html>
